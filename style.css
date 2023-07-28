@@ -1,3 +1,51 @@
 #head{
     color: red;
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #0f1f1f;
+}
+
+.logo{
+    margin: 20px;
+}
+.navbar-menu ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.navbar-menu ul li{
+    margin: 20px;
+    padding: 20px;
+    font-size: 16px;
+}
+.navbar-menu ul li:hover{
+    cursor: pointer;
+}
+
+.body{
+    margin-top:20px;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-card{
+  width: 200px;
+  height: 350px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+.res-card .img-card{
+    width: 100%;
+
+}

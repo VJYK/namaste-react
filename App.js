@@ -15,7 +15,8 @@
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import HeaderComponent from "./src/components/Header";
+import BodyComponent from "./src/components/Body";
 //Create Elements using core React
 
 /* const parent = React.createElement(
@@ -41,47 +42,6 @@ const heading = <h1>Hello JSX</h1>;
 //Using Jsx create functional component
 
 
-const RestaurantCard=(props)=>{
-  console.log(props);
- return (<div className="res-card" style={{backgroundColor:"#f0f0f0"}}>
-    <img className="img-card" src="https://graphicsfamily.com/wp-content/uploads/edd/2021/06/Food-Logo-Design.jpg"/>
-    <h3>{props.resname}</h3>
-    <h4>Biryani, North Indian, Indian</h4>
-    <h4>4.3 Star</h4>
-    <h4>38 Minutes</h4>
-  </div>)
-}
-
-const HeaderComponent = () => (
-  <div className="header">
-    <img
-      className="logo"
-      src="https://graphicsfamily.com/wp-content/uploads/edd/2021/06/Food-Logo-Design.jpg"
-      alt="logo"
-      width={100}
-      height={100}
-    />
-    <div className="navbar-menu">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
-
-const BodyComponent =()=>{
-return  (
-<div className="body">
-  <div className="search">Search</div>
-  <div className="res-container">
-    <RestaurantCard resname="Meghana Sweets"/>
-    
-  </div>
-</div>)
-}
 
 const AppLayout =()=>{
   return (<div className="app">

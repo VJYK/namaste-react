@@ -1,5 +1,6 @@
 import RestaurantCard from "./ResCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from './Shimmer'
 
 const BodyComponent = () => {
   let [listOfRestaurents, setListOfRestaurent] = useState([
@@ -35,7 +36,25 @@ const BodyComponent = () => {
     },
   ]);
 
-  return (
+  useEffect(()=>{fetchData()},[]);
+
+  const fetchData = async ()=>{
+   //const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6242263&lng=77.203868&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+   //const json = await data.json();
+
+   //console.log(json);
+
+
+   //Optional Chaining
+   setListOfRestaurent(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
+  //Conditional Rendering
+  /* if(listOfRestaurents.length===0){
+    return (<><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /></>)
+  } */
+
+  return listOfRestaurents.length===0?<Shimmer/>: (
     <div className="body">
       <div className="search">Search</div>
 

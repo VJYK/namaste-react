@@ -46,7 +46,7 @@ const BodyComponent = () => {
 
 
    //Optional Chaining
-   setListOfRestaurent(json?.data?.cards[2]?.data?.data?.cards);
+   //setListOfRestaurent(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   //Conditional Rendering
@@ -59,6 +59,13 @@ const BodyComponent = () => {
       <div className="search">Search</div>
 
       <div className="filter">
+
+        <div className="search">
+          <input type="text" className="search-box"/>
+          <button>Search</button>
+        </div>
+
+
         <button
           className="filter-btn"
           onClick={() => {

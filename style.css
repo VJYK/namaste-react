@@ -68,3 +68,11 @@
     height: 400px;
     background-color: #f0f0f0;
 }
+
+.login-btn{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    margin: 0px 20px;
+    padding:10px
+}

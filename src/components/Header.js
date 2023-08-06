@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
 
@@ -13,9 +14,9 @@ const HeaderComponent = () => {
       />
       <div className="navbar-menu">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
+          <li> <Link to='/'> Home</Link></li>
+          <li><Link to='/about'>About</Link></li>
+          <li><Link to='/contact'>Contact Us</Link></li>
           <li>Cart</li>
           <button className="login-btn" onClick={()=> loginButton==='Login'?setButton('Logout'):setButton('Login')}>{loginButton}</button>
         </ul>

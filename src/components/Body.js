@@ -1,6 +1,7 @@
 import RestaurantCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmer from './Shimmer'
+import { Link } from "react-router-dom";
 
 const BodyComponent = () => {
   let [listOfRestaurents, setListOfRestaurent] = useState([]);
@@ -15,13 +16,12 @@ const BodyComponent = () => {
 
 
    //Optional Chaining
-  setListOfRestaurent(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setListOfRestaurent(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
-
   //Conditional Rendering
-  if(listOfRestaurents.length===0){
-    return (<><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /><Shimmer /></>)
-  }
+  /* if(listOfRestaurents.length===0){
+    return (<Shimmer />)
+  } */
 
   return listOfRestaurents.length===0?<Shimmer/>: (
     <div className="body">
@@ -50,7 +50,7 @@ const BodyComponent = () => {
 
       <div className="res-container">
         {listOfRestaurents.map(restaurent =>
-          <RestaurantCard key={restaurent.info.id} resData={restaurent.info} />
+         <Link to={`/restaurent/${restaurent.info.id}`}> <RestaurantCard key={restaurent.info.id} resData={restaurent.info} /></Link>
         )}
       </div>
     </div>

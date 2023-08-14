@@ -6,24 +6,23 @@ import { Link } from "react-router-dom";
 const BodyComponent = () => {
   let [listOfRestaurents, setListOfRestaurent] = useState([]);
 
-  useEffect(()=> fetchData(),[]);
+  useEffect(()=> {
+    fetchData();
+  },[]);
 
-  const fetchData = async ()=>{
+   const fetchData =  async ()=>{
    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6309308&lng=77.2441075&page_type=DESKTOP_WEB_LISTING");
    const json = await data.json();
 
-   console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-
    //Optional Chaining
-  setListOfRestaurent(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   setListOfRestaurent(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //Conditional Rendering
   /* if(listOfRestaurents.length===0){
     return (<Shimmer />)
   } */
 
-  return listOfRestaurents.length===0?<Shimmer/>: (
+  return listOfRestaurents?.length==0?<Shimmer/>: (
     <div className="body">
       <div className="search">Search</div>
 

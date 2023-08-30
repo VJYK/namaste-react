@@ -5,7 +5,6 @@ import useRestaurentMenu from "../utils/useRestaurentMenu";
 
 const RestaurentMenu = () => {
   const {resId} = useParams();
-  debugger
   const resInfo = useRestaurentMenu(resId);
   if (resInfo === null) {
     return <Shimmer />;

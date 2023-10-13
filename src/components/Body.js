@@ -47,7 +47,7 @@ const BodyComponent = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
-            className="border border-solid border-black"
+            className="border border-solid border-black h-9 rounded-l-full"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -65,7 +65,7 @@ const BodyComponent = () => {
 
               setFilteredRestaurant(filteredRestaurant);
             }}
-            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            className="py-2 p-4 bg-green-100 mr-4 rounded-r-full"
           >
             Search
           </button>
